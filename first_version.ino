@@ -4,10 +4,14 @@ void setup() {
   Serial.begin(9600);
   lcd.init();
   lcd.backlight();
-  lcd.setCursor(0, 0);
-    lcd.clear();
-    lcd.print("hello world");
+  Serial.print("enter a number");
 }
 
 void loop() {
+  int a = Serial.parseInt();
+ if(Serial.available() > 0){
+    lcd.setCursor(0, 0);
+    lcd.clear();
+    lcd.print(a);
+  }
 }
